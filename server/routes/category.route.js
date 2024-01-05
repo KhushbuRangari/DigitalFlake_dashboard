@@ -8,7 +8,7 @@ const jwtVerify = require("../middleware/jwtVerify.middleware");
 categoryRouter.post('/api/add',jwtVerify,addCategory);
 
 //fetching all the category 
-categoryRouter.get('/api/getAll',jwtVerify,getAll)
+categoryRouter.get('/api/getAll',getAll)
 
 
 

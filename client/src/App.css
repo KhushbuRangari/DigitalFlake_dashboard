@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+.navbar{
+  background-color: rgb(138, 17, 138) !important;
+
+}
+
+.sidebar {
+  position: fixed;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #ffffff;
+  border-right: 1px solid #eee;
+  }
+
+  .sidebar li{
+    line-height: 50px;
+  }
