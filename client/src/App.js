@@ -9,22 +9,29 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './Components/context/AuthContext';
 import Product from './Components/pages/Product';
 import Category from './Components/pages/Category';
-
+import { CategoryProvider } from './Components/context/CategoryContext';
+import useCategory from './Components/hooks/useCategory';
 
 function App() {
+
+
   return (
     <Router>
       <div className="App">
         <AuthProvider>
+        <CategoryProvider>
           <Navbar></Navbar>
           <Routes>
             <Route path='/' element={<Home></Home>}></Route>
             <Route path='/main' element={<Sidemenu></Sidemenu>}></Route>
+        
             <Route path='/category' element={<Category></Category>}></Route>
+      
             <Route path='/product' element={<Product></Product>}></Route>
             <Route path='/logout' element={<Logout></Logout>}></Route>
           </Routes>
           <ToastContainer />
+          </CategoryProvider>
         </AuthProvider>
       </div>
     </Router>

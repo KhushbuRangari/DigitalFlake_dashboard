@@ -5,20 +5,18 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 function useCategory() {
-
-
     const [category,setCategory]=useState([]);
     const getAll= async ()=>{
         try {
             const response = await axios.get(`${BASE_URL}category/api/getAll`);
-            console.log(response.data.getCatData);
-
+            console.log(response);
+            setCategory(response.data.getCatData)
         } catch (error) {
             toast("Something Wrong in Category");
             console.error(error);
         }
     }
-  return (getAll )
+  return (category,getAll)
 }
 
 export default useCategory
