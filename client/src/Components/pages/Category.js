@@ -3,10 +3,14 @@ import { useCatContext } from "../../Components/context/CategoryContext";
 import axios from "axios";
 import BASE_URL from "../../serverConnection";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import Sidemenu from "../Sidemenu";
 
 function Category() {
   const [category, setCategory] = useState({ getCatData: [] });
+  const [item, setItem] = useState("");
 
+const navigate = useNavigate();
   useEffect(() => {
     const getAll = async () => {
       try {
@@ -20,21 +24,23 @@ function Category() {
     getAll();
   }, []);
 
-  const [item, setItem] = useState("");
+  console.log(category.getCatData);
 
   function handleChange(e) {
     setItem({
       ...item,
       [e.target.name]: e.target.value,
     });
+
   }
 
-  function handleSubmit(e) {
+  function handleClick(e) {
     e.preventDefault();
-    // Add logic for handling form submission
+        navigate('/addCategory')
   }
 
   return (
+    <Sidemenu>
     <div className="container my-3">
       <div className="row">
         <div className="col">
@@ -58,7 +64,7 @@ function Category() {
           </div>
         </div>
         <div className="col">
-          <button className="btn btn-primary" onClick={handleSubmit}>
+          <button className="btn btn-primary" onClick={handleClick}>
             Add New
           </button>
         </div>
@@ -88,6 +94,7 @@ function Category() {
         </div>
       </div>
     </div>
+    </Sidemenu>
   );
 }
 
