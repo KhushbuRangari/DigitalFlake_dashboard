@@ -34,7 +34,7 @@ function Product() {
     };
     getAll();
   }, []);
-
+console.log(product);
   function handleChange(e) {
     setItem({
       ...item,
@@ -86,6 +86,7 @@ function Product() {
                   <th scope="col">Size</th>
                   <th scope="col">Price</th>
                   <th scope="col">Status</th>
+                  <th scope="col">Image</th>
                 </tr>
               </thead>
               <tbody>
@@ -94,6 +95,7 @@ function Product() {
                     <th scope="row">{key + 1}</th>
                     <td>{item.name}</td>
                     <td>{item.packSize}</td>
+                    <img src={`${BASE_URL}/${item.imgURL}`} alt="Product" style={{ width: '100px' }} />
                     <td>{item.price}</td>
                     <td
                       style={{

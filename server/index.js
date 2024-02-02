@@ -24,9 +24,7 @@ app.use('/product',productRouter);
 const dbConnect = require('./DBConnection');
 dbConnect();
 
-
-
-
+app.use('/uploads', express.static('uploads'));
 
 
 app.use((error, req, res, next) => {
