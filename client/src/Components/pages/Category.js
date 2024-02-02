@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { useCatContext } from "../../Components/context/CategoryContext";
 import axios from "axios";
 import BASE_URL from "../../serverConnection";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Sidemenu from "../Sidemenu";
+import { useAuthContext } from "../context/AuthContext";
 
 function Category() {
   const [category, setCategory] = useState({ getCatData: [] });
   const [item, setItem] = useState("");
+  const auth = useAuthContext();
 
 const navigate = useNavigate();
   useEffect(() => {
     const getAll = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/category/api/getAll`);
+        const token =auth.user.token;
+        const response = await axios.get(`${BASE_URL}/category/api/getAll`,{
+          headers:{
+            Authorization:`Bearar ${token}`
+          }
+        });
         setCategory(response.data);
       } catch (error) {
         toast("Something went wrong with fetching categories");
@@ -24,7 +30,7 @@ const navigate = useNavigate();
     getAll();
   }, []);
 
-  console.log(category.getCatData);
+
 
   function handleChange(e) {
     setItem({
@@ -85,7 +91,7 @@ const navigate = useNavigate();
                 <tr key={key}>
                   <th scope="row">{key + 1}</th>
                   <td>{item.categoryName}</td>
-                  <td>{item.description}</td>
+                  <td>{item.categoryDescription}</td>
                   <td style={{color:item.status==="true"?"green":"red"}}>{item.status==="true"?"Active":"Inactive"}</td>
                 </tr>
               ))}

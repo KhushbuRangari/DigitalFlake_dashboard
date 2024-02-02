@@ -1,16 +1,24 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useAuthContext } from "./context/AuthContext";
 
 function Navbar() {
-  
-
+  const navigate = useNavigate();
+    const auth = useAuthContext();
     function hangleLogout(e) {
-  
+      auth.logout(true);
+      alert("user logged out")
     }
+
+    const handleLogin = ()=>{
+   navigate("/")
+    }
+
+    // console.log(auth.user.token,"user");
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <a className="navbar-brand" href="#">
-        <i class="fa fa-dashcube" style={{ color: "white", border: "none" }}>
+        <i className="fa fa-dashcube" style={{ color: "white", border: "none" }}>
           digitalflake
         </i>
       </a>
@@ -29,12 +37,17 @@ function Navbar() {
         className="collapse d-flex justify-content-end navbar-collapse"
         id="navbarSupportedContent"
       >
-        <button class="btn btn-outline-success  my-2 my-sm-0" type="submit" onClick={hangleLogout}>
+
+        {
+          auth.isLogged?     <button className="btn btn-outline-success  my-2 my-sm-0" type="submit" onClick={hangleLogout}>
           <i
-            class="fa fa-user-circle"
+            className="fa fa-user-circle"
             style={{ fontSize: "36px", border:"none" }}
-          ></i>
-        </button>
+          >Logout</i>
+        </button>:
+       ""
+        }
+   
       </div>
     </nav>
   );

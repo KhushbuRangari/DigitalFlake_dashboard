@@ -6,9 +6,9 @@ const CategoryContext = createContext();
 const useCatContext = () => useContext(CategoryContext);
 
 const CategoryProvider = ({ children }) => {
-  const cat = useCategory();
+  const category = useCategory();
 
-  return <CategoryContext.Provider value={cat}>{children}</CategoryContext.Provider>;
+  return <CategoryContext.Provider value={category}>{children}</CategoryContext.Provider>;
 };
 
 export { useCatContext, CategoryProvider };

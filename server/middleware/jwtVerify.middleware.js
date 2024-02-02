@@ -9,7 +9,7 @@ const jwtVerify = async (req,res,next)=>{
               message: `Unauthorized to access`
             });
           }
-        if(req.headers.authorozation && req.headers){
+        if(req.headers.authorization && req.headers){
 
             const beararToken = req.headers.authorization;
             const token = beararToken.split(" ")[1];

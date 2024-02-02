@@ -12,6 +12,7 @@ import Category from './Components/pages/Category';
 import { CategoryProvider } from './Components/context/CategoryContext';
 import useCategory from './Components/hooks/useCategory';
 import AddCategory from './Components/pages/AddCategory';
+import AddProduct from './Components/pages/AddProduct';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/category' element={<Category></Category>}></Route>
             <Route path='/addCategory' element={<AddCategory></AddCategory>}></Route>
             <Route path='/product' element={<Product></Product>}></Route>
+            <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
             <Route path='/logout' element={<Logout></Logout>}></Route>
           </Routes>
           <ToastContainer />

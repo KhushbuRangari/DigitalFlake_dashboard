@@ -12,7 +12,7 @@ function Home() {
       ...login,
       [e.target.name]: e.target.value,
     });
-    console.log(login);
+   
   }
 
 function handleSubmit(e) {
@@ -32,21 +32,21 @@ function handleSubmit(e) {
             <img
               src="/image_289.png"
               alt=""
-              style={{ width: "160px", height: "120px" }}
+              style={{ width: "160px", height: "150px" }}
             />
             <h5>Welcome to Digitalflake Admin</h5>
           </span>
           <>
             <div style={{ width: "100%" }}>
               <div
-                classname="form-group "
+                className="form-group "
                 style={{ marginBottom: "20px", width: "100%" }}
               >
                 <input
                   type="email"
                   name="email"
                   onChange={handleChange}
-                  classname="form-control"
+                  className="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
@@ -56,12 +56,12 @@ function handleSubmit(e) {
                   }}
                 />
               </div>
-              <div classname="form-group " style={{ marginBottom: "12px" }}>
+              <div className="form-group " style={{ marginBottom: "12px" }}>
                 <input
                   type="password"
                   name="password"
                   onChange={handleChange}
-                  classname="form-control"
+                  className="form-control"
                   id="exampleInputPassword1"
                   placeholder="Password"
                   style={{
@@ -75,7 +75,7 @@ function handleSubmit(e) {
               </div>
               <button
                 type="submit"
-                classname="btn btn-primary"
+                className="btn btn-primary"
                 style={{ backgroundColor: "rgb(138, 17, 138)", width: "100%" }}
                 onClick={handleSubmit}
               >

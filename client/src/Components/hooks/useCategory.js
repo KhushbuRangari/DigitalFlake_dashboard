@@ -1,22 +1,44 @@
-import  BASE_URL  from "../../serverConnection";
-import { useNavigate, useLocation } from "react-router-dom";
+import BASE_URL from "../../serverConnection";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { useAuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-function useCategory() {
-    const [category,setCategory]=useState([]);
-    const getAll= async ()=>{
+const useCategory = () => {
+  const auth = useAuthContext();
+  const [category, setCategory] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+
+
+    const getAll = async () => {
         try {
-            const response = await axios.get(`${BASE_URL}category/api/getAll`);
-            console.log(response);
-            setCategory(response.data.getCatData)
+          if(auth.isLogged){
+              // const localData = localStorage.getItem('user');
+              // const token = localData.token;
+  
+              const token =auth.user.token;
+              const response = await axios.get(`${BASE_URL}/category/api/getAll`, {
+                headers: {
+                  Authorization: `Bearar ${token}`,
+                },
+              });
+             
+              setCategory(response.data);
+          }else{
+              navigate("/")
+          }
         } catch (error) {
-            toast("Something Wrong in Category");
-            console.error(error);
+          //   toast("Something went wrong with fetching categories");
+          console.error(error);
         }
-    }
-  return (category,getAll)
-}
+      };
+      getAll();
+  },[auth.isLogged])
 
-export default useCategory
+
+  return { category};
+};
+
+export default useCategory;

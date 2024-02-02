@@ -43,7 +43,7 @@ const getAll = async (req,res)=>{
                
         const getCatData = await categoryModel.find();
 
-        console.log(getCatData);
+        // console.log(getCatData);
         if(!getCatData){
             res.status(404).json({
                 message:"category not found"

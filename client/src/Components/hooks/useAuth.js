@@ -22,7 +22,6 @@ const useAuth = () => {
       const authResult = await axios.post(`${BASE_URL}/user/api/login`, data);
      
       const userObj = {
-        status:true,
         user:authResult.data.user,
         token: authResult.data.token,
       };
@@ -41,8 +40,9 @@ const useAuth = () => {
 
   const logout = (status) => {
     setUser(null);
-    setIsLogged(status)
+    setIsLogged(false)
     localStorage.removeItem('user');
+    navigate("/")
   };
   return { localUser,user,isLogged,setIsLogged, login, logout };
 };
