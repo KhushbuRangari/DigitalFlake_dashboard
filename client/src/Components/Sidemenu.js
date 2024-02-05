@@ -10,27 +10,24 @@ function Sidemenu({ children }) {
 
   return (
     <div className="container-fluid">
-      <div className="row d-flex justify-content">
-        <button
-          className="navbar-toggler bg-dark"
-          type="button"
-          onClick={handleToggle}
-          aria-controls="collapseTarget"
-          aria-expanded={isCollapsed ? "true" : "false"}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className={`col-sm-3 col-md-2 sidebar ${isCollapsed ? "collapse" : ""}`}
-          id="collapseTarget"
-        >
+      <button
+        className="navbar-toggler bg-dark d-md-none"
+        type="button"
+        onClick={handleToggle}
+        aria-controls="collapseTarget"
+        aria-expanded={isCollapsed ? "true" : "false"}
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="row  justify-content-end">
+        <div className={`col-3 sidebar ${isCollapsed ? "d-none d-md-block " : ""}`}>
           <ul className="nav flex-column">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/">
                 <i className="fa fa-home" aria-hidden="true"></i> HOME
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/category">
                 <i className="fa fa-th-large"></i> CATEGORY
@@ -43,12 +40,7 @@ function Sidemenu({ children }) {
             </li>
           </ul>
         </div>
-        <div
-          className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"
-          style={{ marginLeft: "15%" }}
-        >
-          <div>{children}</div>
-        </div>
+        <div className={` main ${isCollapsed?"col-sm-12":"col-9"}`} >{children}</div>
       </div>
     </div>
   );

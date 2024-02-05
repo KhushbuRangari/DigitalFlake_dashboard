@@ -75,7 +75,7 @@ function Category() {
             </button>
           </div>
         </div>
-        <div className="row">
+        <div className="row  justify-content-center">
           <div className="col">
             <table className="table table-striped">
               <thead>
