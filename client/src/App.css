@@ -45,14 +45,15 @@
 
 .sidebar {
   position: fixed;
-  top: 10%;
+  /* top: 15%; */
+  height: 80%;
   bottom: 0;
   left: 0;
   z-index: 1000;
   display: block;
   padding: 20px;
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: hidden; /* Scrollable contents if viewport is shorter than content. */
   background-color: #ffffff;
   border-right: 1px solid #eee;
   }

@@ -4,7 +4,6 @@ import { useAuthContext } from "../../Components/context/AuthContext";
 
 function Home() {
   const [login, setLogin] = useState({});
-  const[user,setUser]=useState([]);
   const auth = useAuthContext();
 
   function handleChange(e) {
@@ -25,14 +24,14 @@ function handleSubmit(e) {
     <div className="container">
       <div className="row">
         <div
-          className="col-6 shadow"
-          style={{ padding: "5%", marginTop: "6%" }}
+          className="col shadow "
+          style={{ padding: "5%", marginTop: "6%"}}
         >
           <span>
             <img
               src="/image_289.png"
               alt=""
-              style={{ width: "160px", height: "150px" }}
+              style={{ width: "160px", height: "120px" }}
             />
             <h5>Welcome to Digitalflake Admin</h5>
           </span>
@@ -85,7 +84,9 @@ function handleSubmit(e) {
           
           </>
         </div>
-        <div className="col-6"></div>
+        <div className="col-md-6 col-sm-12">
+          <img src="admin.jpg" alt="" style={{ width: "80%",height:"80%",margin:"15%" }} />
+        </div>
       </div>
     </div>
   );

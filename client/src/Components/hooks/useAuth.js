@@ -30,7 +30,7 @@ const useAuth = () => {
       localStorage.setItem("user", JSON.stringify(userObj));
       setIsLogged(true);
       toast("Login Successfull");
-      navigate((location.state && location.state.from) || "/main"); // Check if location.state is truthy
+      navigate((location.state && location.state.from) || "/category"); // Check if location.state is truthy
     } catch (error) {
       toast("Something Wrong");
       console.error(error);

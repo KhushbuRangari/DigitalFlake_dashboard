@@ -9,18 +9,18 @@ import { useAuthContext } from "../context/AuthContext";
 function Product() {
   const auth = useAuthContext();
   const [product, setProduct] = useState([]);
-  const [item, setItem] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    const getAll = async () => {
+    const getAllProducts = async () => {
       const token = auth.user && auth.user.token;
 
       try {
         if (auth.isLogged) {
           const response = await axios.get(`${BASE_URL}/product/api/getAll`, {
             headers: {
-              Authorization: `Bearar ${token}`,
+              Authorization: `Bearer ${token}`,
             },
           });
           setProduct(response.data.getProdData);
@@ -32,15 +32,17 @@ function Product() {
         console.error(error);
       }
     };
-    getAll();
-  }, []);
-console.log(product);
+    getAllProducts();
+  }, [auth.user, navigate]);
+
+  const filteredProducts = product.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   function handleChange(e) {
-    setItem({
-      ...item,
-      [e.target.name]: e.target.value,
-    });
+    setSearchTerm(e.target.value);
   }
+
   function handleClick(e) {
     e.preventDefault();
     navigate("/addProduct");
@@ -51,8 +53,9 @@ console.log(product);
       <div className="container my-3">
         <div className="row">
           <div className="col">
-            <i className="fa fa-th-large"></i>
-            <h4>product</h4>
+            <h4>
+              <i className="fa fa-product-hunt"></i> Products
+            </h4>
           </div>
           <div className="col">
             <div className="input-group mb-3">
@@ -64,8 +67,10 @@ console.log(product);
               <input
                 type="text"
                 name="search"
+                value={searchTerm}
                 onChange={handleChange}
                 className="form-control"
+                placeholder="Search by product name"
                 aria-label="search"
               />
             </div>
@@ -84,18 +89,24 @@ console.log(product);
                   <th scope="col"></th>
                   <th scope="col">Name</th>
                   <th scope="col">Size</th>
+                  <th scope="col">Image</th>
                   <th scope="col">Price</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Image</th>
                 </tr>
               </thead>
               <tbody>
-                {product.map((item, key) => (
+                {filteredProducts.map((item, key) => (
                   <tr key={key}>
                     <th scope="row">{key + 1}</th>
                     <td>{item.name}</td>
                     <td>{item.packSize}</td>
-                    <img src={`${BASE_URL}/${item.imgURL}`} alt="Product" style={{ width: '100px' }} />
+                    <td>
+                      <img
+                        src={`${BASE_URL}/${item.imgURL}`}
+                        alt="Product"
+                        style={{ width: "100px" }}
+                      />
+                    </td>
                     <td>{item.price}</td>
                     <td
                       style={{
