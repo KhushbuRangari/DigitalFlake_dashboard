@@ -1,9 +1,15 @@
-# DigitalFlake_dashboard
+# D![Log![Screenshot_20240206_135322](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/68e8f7fe-f28d-4cc6-80d6-347f3ec93bc9)
+![Screenshot_20240206_135308](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/91ae9ae0-a38d-46f2-926b-dd6f0b3e242d)
+![Screenshot_20240206_135242](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/d87af137-205f-4928-9786-ab3229e7e729)
+![Screenshot_20240206_135232](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/22fdf1c8-feb6-4fb3-89a6-1e6c491e2bb9)
+![Screenshot_20240206_135202](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/2e99f3d3-d419-41cd-81f3-a8e8383a1f37)
+![Screenshot_20240105_181301](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/a7fedbc2-7057-4e62-bdc4-e1c62854f03b)
+![Screenshot_20240105_181201](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/916aac24-2bc2-4517-a0cf-9d9c7173d0c4)
+![Screenshot_20240105_181145](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/22cbe611-9148-4230-b9b7-bf084f5d5042)
+in Page](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/a866d8f5-b903-4626-b951-2823616dbe05)
 
-![Screenshot_20240105_181301](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/810cc52c-a143-438c-8c0b-917dd0c91b1d)
-![Screenshot_20240105_181201](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/112f2212-a777-41d6-8166-d69891b15e89)
-![Screenshot_20240105_181145](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/2b0b1b4a-d80d-409b-b08a-e13576b902fb)
-![Login Page](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/badf6bbc-b2a2-428b-a3f0-d28137e6186d)
+
+
 Project Details: Ecommerce Admin with MERN Stack
 Overview:
 This project focuses on creating a comprehensive Ecommerce Admin application using the MERN (MongoDB, Express.js, React.js, Node.js) Stack. It provides functionalities for user authentication, category management, product management, and more, enabling users to efficiently manage their online store.
