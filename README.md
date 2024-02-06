@@ -5,9 +5,8 @@
 ![Screenshot_20240206_135202](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/2e99f3d3-d419-41cd-81f3-a8e8383a1f37)
 ![Screenshot_20240105_181301](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/a7fedbc2-7057-4e62-bdc4-e1c62854f03b)
 ![Screenshot_20240105_181201](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/916aac24-2bc2-4517-a0cf-9d9c7173d0c4)
-![Screenshot_20240105_181145](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/22cbe611-9148-4230-b9b7-bf084f5d5042)
-in Page](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/a866d8f5-b903-4626-b951-2823616dbe05)
-
+![Screenshot_20![Login Page](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/2dddf4c8-5ada-482f-9abe-badd27ecc401)
+240105_181145](https://github.com/KhushbuRangari/DigitalFlake_dashboard/assets/126225826/22cbe611-9148-4230-b9b7-bf084f5d5042)
 
 
 Project Details: Ecommerce Admin with MERN Stack
