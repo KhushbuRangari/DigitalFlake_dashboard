@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import { useAuthContext } from "../../Components/context/AuthContext";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Home() {
   const [login, setLogin] = useState({});
@@ -16,6 +18,7 @@ function Home() {
 
 function handleSubmit(e) {
     e.preventDefault();
+ 
     auth.login(login); 
 }
 
@@ -70,12 +73,12 @@ function handleSubmit(e) {
                 />
               </div>
               <div className="d-flex justify-content-end" style={{marginBottom:"5px"}}>
-                <a href="">Forgot Password?</a>
+                <Link to="/forgotPassword">Forgot Password?</Link>
               </div>
               <button
                 type="submit"
                 className="btn btn-primary"
-                style={{ backgroundColor: "rgb(138, 17, 138)", width: "100%" }}
+                style={{ backgroundColor: "#282c34", width: "100%" }}
                 onClick={handleSubmit}
               >
                 <h5 className="text-white">Log In</h5>

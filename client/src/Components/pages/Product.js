@@ -29,7 +29,7 @@ function Product() {
         }
       } catch (error) {
         toast("Something went wrong with getting Products");
-        console.error(error);
+        console.error(error.response.data.message);
       }
     };
     getAllProducts();

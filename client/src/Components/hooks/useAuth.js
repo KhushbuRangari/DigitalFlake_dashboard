@@ -32,8 +32,8 @@ const useAuth = () => {
       toast("Login Successfull");
       navigate((location.state && location.state.from) || "/category"); // Check if location.state is truthy
     } catch (error) {
-      toast("Something Wrong");
-      console.error(error);
+      toast(error.response.data.message);
+      console.error(error.response.data.message);
     }
   };
 

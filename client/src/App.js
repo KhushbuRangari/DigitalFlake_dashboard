@@ -13,6 +13,7 @@ import { CategoryProvider } from './Components/context/CategoryContext';
 import useCategory from './Components/hooks/useCategory';
 import AddCategory from './Components/pages/AddCategory';
 import AddProduct from './Components/pages/AddProduct';
+import ForgotPassword from './Components/pages/ForgotPassword';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route path='/product' element={<Product></Product>}></Route>
             <Route path='/addProduct' element={<AddProduct></AddProduct>}></Route>
             <Route path='/logout' element={<Logout></Logout>}></Route>
+            <Route path='/forgotPassword' element={<ForgotPassword></ForgotPassword>}></Route>
           </Routes>
           <ToastContainer />
           </CategoryProvider>

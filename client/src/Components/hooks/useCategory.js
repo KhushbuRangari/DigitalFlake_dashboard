@@ -30,8 +30,8 @@ const useCategory = () => {
               navigate("/")
           }
         } catch (error) {
-          //   toast("Something went wrong with fetching categories");
-          console.error(error);
+            //  toast(error.response.data.message);
+          console.error(error.response.data.message);
         }
       };
       getAll();

@@ -37,9 +37,12 @@
   }
 }
 
+body{
+  width: 100%;
+}
 
 .navbar{
-  background-color: rgb(138, 17, 138) !important;
+  background-color: rgb(5, 82, 112) !important;
 
 }
 

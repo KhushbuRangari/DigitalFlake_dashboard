@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link,  useNavigate } from "react-router-dom";
 import { useAuthContext } from "./context/AuthContext";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const navigate = useNavigate();
   const auth = useAuthContext();
   function hangleLogout(e) {
     auth.logout(true);
-    alert("user logged out");
+  toast("You are logged out.")
   }
 
   const handleLogin = () => {
     navigate("/");
   };
 
-  // console.log(auth.user.token,"user");
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
-      <a className="navbar-brand" href="#">
+    <nav className="navbar navbar-expand navbar-light w-100 ">
+      <Link className="navbar-brand" to={`${auth.isLogged?"/category":"/"}`}>
         <i
           className="fa fa-dashcube"
           style={{ color: "white", border: "none" }}
         >
-          digitalflake
+          Digitalflake
         </i>
-      </a>
+      </Link>
   
       <div
         className="collapse d-flex justify-content-end navbar-collapse"
@@ -32,13 +32,13 @@ function Navbar() {
       >
         {auth.isLogged ? (
           <button
-            className="btn btn-outline-success  my-2 my-sm-0"
+            className="btn btn-outline-light  my-2 my-sm-0"
             type="submit"
             onClick={hangleLogout}
           >
             <i
-              className="fa fa-user-circle"
-              style={{ fontSize: "36px", border: "none" }}
+              className="fa fa-sign-out"
+              style={{ fontSize: "25px", border: "none" }}
             >
               Logout
             </i>

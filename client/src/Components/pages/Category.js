@@ -24,7 +24,7 @@ function Category() {
         setCategory(response.data);
       } catch (error) {
         toast("Something went wrong with fetching categories");
-        console.error(error);
+        console.error(error.response.data.message);
       }
     };
     getAllCategories();
